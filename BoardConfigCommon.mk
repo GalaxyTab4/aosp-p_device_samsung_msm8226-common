@@ -124,6 +124,7 @@ BOARD_SEPOLICY_UNION += \
     file.te \
     init.te \
     init_shell.te \
+    kernel.te \
     keystore.te \
     mediaserver.te \
     mm-qcamerad.te \
@@ -133,9 +134,11 @@ BOARD_SEPOLICY_UNION += \
     property.te \
     rild.te \
     rmt_storage.te \
+    sensord.te \
     system_app.te \
     system_server.te \
     thermal-engine.te \
+    ueventd.te \
     vold.te
 
 # Vold
