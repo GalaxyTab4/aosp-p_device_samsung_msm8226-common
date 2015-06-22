@@ -589,7 +589,7 @@ service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh synaptics aps
     user root
     oneshot
 
-service charge_only_mode /system/bin/charge_only_mode
+service charge_only_mode /system/bin/charge_only_modeO
     user root
     group graphics system input
     disabled

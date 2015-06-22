@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
+# charge_only_mode
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/charge_only_mode:system/bin/charge_only_modeO
+
 # CRDA
 PRODUCT_PACKAGES += \
     crda \
