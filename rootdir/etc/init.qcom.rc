@@ -762,6 +762,8 @@ on charger
     write /sys/class/android_usb/android0/idProduct 2EB7
     write /sys/class/android_usb/android0/functions mass_storage
     write /sys/class/android_usb/android0/enable 1
+    write /sys/class/leds/charging/trigger "battery-full"
+    write /sys/class/leds/charging/brightness 255
     start charge_only_mode
     write /sys/module/lpm_levels/enable_low_power/l2 3
     write /sys/class/leds/lcd-backlight/brightness 255
