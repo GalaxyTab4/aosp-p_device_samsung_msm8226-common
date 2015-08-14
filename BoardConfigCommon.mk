@@ -14,13 +14,13 @@
 # limitations under the License.
 
 # inherit from the proprietary version
--include vendor/motorola/msm8226-common/BoardConfigVendor.mk
+-include vendor/samsung/msm8226-common/BoardConfigVendor.mk
 
-LOCAL_PATH := device/motorola/msm8226-common
+LOCAL_PATH := device/samsung/msm8226-common
 
-BOARD_VENDOR := motorola-qcom
+BOARD_VENDOR := samsung-qcom
 
-TARGET_SPECIFIC_HEADER_PATH := device/motorola/msm8226-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/msm8226-common/include
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
@@ -39,12 +39,12 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags
+BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_SOURCE := kernel/motorola/msm8226
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
+TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
 
 # Audio
 AUDIO_FEATURE_ENABLED_FM := true
@@ -63,7 +63,7 @@ BLUETOOTH_HCI_USE_MCT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charger
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/mmi_lpm/lpm_mode
+# BOARD_CHARGING_MODE_BOOTING_LPM := /sys/mmi_lpm/lpm_mode
 
 # CMHW
 BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw/
@@ -86,8 +86,8 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Memory
 MALLOC_IMPL := dlmalloc
 
-# Motorola
-TARGET_USES_MOTOROLA_LOG := true
+# samsung
+# TARGET_USES_samsung_LOG := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -102,17 +102,17 @@ BOARD_USES_QCOM_HARDWARE := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Release tools
-TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/msm8226-common
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/msm8226-common
 
 # SELinux
 -include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/motorola/msm8226-common/sepolicy
+    device/samsung/msm8226-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     akmd8963.te \
