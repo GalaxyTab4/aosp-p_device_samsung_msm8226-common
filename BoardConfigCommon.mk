@@ -99,9 +99,23 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_SEPOLICY_DIRS += device/samsung/msm8226-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-       hostapd.te \
-       platform_app.te \
-       kernel.te
+	bluetooth.te \
+    device.te \
+    file_contexts \
+    file.te \
+    kernel.te \
+    mediaserver.te \
+    mm-qcamerad.te \
+    mpdecision.te \
+    platform_app.te \
+    property_contexts \
+    property.te \
+	qseecomd.te \
+    rild.te \
+    rmt_storage.te \
+    thermal-engine.te \
+    ueventd.te \
+    vold.te
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -117,12 +131,3 @@ TARGET_USES_WCNSS_CTRL           := true
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME          := "wlan"
-
-WLAN_MODULES:
-	mkdir -p $(KERNEL_MODULES_OUT)/pronto
-	mv $(KERNEL_MODULES_OUT)/wlan.ko $(KERNEL_MODULES_OUT)/pronto/pronto_wlan.ko
-	ln -sf /system/lib/modules/pronto/pronto_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
-
-TARGET_KERNEL_MODULES += WLAN_MODULES

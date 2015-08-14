@@ -24,8 +24,8 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 1280
 
 # Dalvik VM config for 1536MB (1.5GB) RAM devices
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -46,10 +46,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libaudio-resampler \
-    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     tinymix
+
+#    libqcompostprocbundle \
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -75,6 +76,17 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes \
     libebtc
+
+# Filesystem
+PRODUCT_PACKAGES += \
+    e2fsck \
+    fsck.f2fs \
+    make_ext4fs \
+    mkfs.f2fs \
+    resize2fs \
+    setup_fs \
+    make_f2fs \
+    mkf2fsuserimg.sh
 
 # FM
 PRODUCT_PACKAGES += \
